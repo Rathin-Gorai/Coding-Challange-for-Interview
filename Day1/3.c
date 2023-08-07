@@ -1,23 +1,29 @@
 // Program to find an element from one dimensional array.
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int num = 5, arr[] = {1, 4, 5, 8, 6, 7, 6}, size = sizeof(arr) / sizeof(arr[0]), i, flag = 0;
-    for (i = 0; i < size; i++)
+    int array[10],i,size,element;
+    printf("enter the number of elements");
+    scanf("%d", &size);
+    printf("enter the elements:");
+    for(i=0;i<size; i++)
     {
-        if (num == arr[i])
-        {
-            flag = 1;
-            break;
-        }
+        scanf("%d", &array[i]);
     }
-    if (flag == 1)
+    printf("Enter the item to be search: ");
+    scanf("%d",&element);
+    i=0;
+    while(i<size && element != array[i])
     {
-        printf("Enelemt found at %d position", i + 1);
+        i++;
+    }
+    if(i<element)
+    {
+        printf("Item found at position %d ",i+1);
     }
     else
     {
-        printf("Element not found ");
+        printf("Element not found. ");
     }
     return 0;
 }
